@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const OrderSchema = z.object({
+export const CreateOrderSchema = z.object({
     asset: z.string().min(3, "Asset name is too short ... "),
     type: z.enum(["buy", "sell"]),
     price: z.number().positive("Price must be positive."),
