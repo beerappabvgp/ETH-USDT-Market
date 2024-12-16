@@ -44,9 +44,9 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
     try {
         //@ts-ignore
-        const { serachParams } = new URL(req.url);
-        const asset = serachParams.get("asset");
-        const type = serachParams.get("type");
+        const { searchParams } = new URL(req.url);
+        const asset = searchParams.get("asset");
+        const type = searchParams.get("type");
 
         const orders = await prisma.order.findMany({
             where: {
